@@ -53,8 +53,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -92,8 +90,6 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "produces": [

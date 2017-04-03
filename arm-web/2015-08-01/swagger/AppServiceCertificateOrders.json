@@ -53,8 +53,6 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "parameters": [
@@ -128,8 +126,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -173,8 +169,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -308,8 +302,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -360,8 +352,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -466,8 +456,6 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "parameters": [
@@ -515,8 +503,6 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "parameters": [
@@ -597,8 +583,6 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "parameters": [
@@ -646,15 +630,11 @@
         "consumes": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml",
           "application/x-www-form-urlencoded"
         ],
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -737,8 +717,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
@@ -782,8 +760,6 @@
         "produces": [
           "application/json",
           "text/json",
-          "application/xml",
-          "text/xml"
         ],
         "parameters": [
           {
