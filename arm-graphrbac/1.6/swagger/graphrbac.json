@@ -1931,15 +1931,12 @@
       "description": "Request parameters for updating an existing application."
     },
     "Application": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/AADObject"
+        }
+      ],
       "properties": {
-        "objectId": {
-          "type": "string",
-          "description": "The object ID."
-        },
-        "objectType": {
-          "type": "string",
-          "description": "The object type."
-        },
         "appId": {
           "type": "string",
           "description": "The application ID."
@@ -1954,10 +1951,6 @@
         "availableToOtherTenants": {
           "type": "boolean",
           "description": "Whether the application is be available to other tenants."
-        },
-        "displayName": {
-          "type": "string",
-          "description": "The display name of the application."
         },
         "identifierUris": {
           "type": "array",
@@ -1978,7 +1971,8 @@
           "description": "The home page of the application."
         }
       },
-      "description": "Active Directory application information."
+      "description": "Active Directory application information.",
+      "x-ms-discriminator-value": "Application"
     },
     "ApplicationListResult": {
       "properties": {
@@ -2063,40 +2057,10 @@
         "displayName": {
           "type": "string",
           "description": "The display name of the object."
-        },
-        "userPrincipalName": {
-          "type": "string",
-          "description": "The principal name of the object."
-        },
-        "mail": {
-          "type": "string",
-          "description": "The primary email address of the object."
-        },
-        "mailEnabled": {
-          "type": "boolean",
-          "description": "Whether the AAD object is mail-enabled."
-        },
-        "securityEnabled": {
-          "type": "boolean",
-          "description": "Whether the AAD object is security-enabled."
-        },
-        "signInName": {
-          "type": "string",
-          "description": "The sign-in name of the object."
-        },
-        "servicePrincipalNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "A collection of service principal names associated with the object."
-        },
-        "userType": {
-          "type": "string",
-          "description": "The user type of the object."
         }
       },
-      "description": "The properties of an Active Directory object."
+      "description": "The properties of an Active Directory object.",
+      "discriminator": "objectType"
     },
     "GetObjectsResult": {
       "properties": {
@@ -2156,19 +2120,12 @@
       "description": "Request parameters for creating a new group."
     },
     "ADGroup": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/AADObject"
+        }
+      ],
       "properties": {
-        "objectId": {
-          "type": "string",
-          "description": "The object ID."
-        },
-        "objectType": {
-          "type": "string",
-          "description": "The object type."
-        },
-        "displayName": {
-          "type": "string",
-          "description": "The display name of the group."
-        },
         "securityEnabled": {
           "type": "boolean",
           "description": "Whether the group is security-enable."
@@ -2178,7 +2135,8 @@
           "description": "The primary email address of the group."
         }
       },
-      "description": "Active Directory group information."
+      "description": "Active Directory group information.",
+      "x-ms-discriminator-value": "Group"
     },
     "GroupListResult": {
       "properties": {
@@ -2278,19 +2236,12 @@
       "description": "Request parameters for creating a new service principal."
     },
     "ServicePrincipal": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/AADObject"
+        }
+      ],
       "properties": {
-        "objectId": {
-          "type": "string",
-          "description": "The object ID."
-        },
-        "objectType": {
-          "type": "string",
-          "description": "The object type."
-        },
-        "displayName": {
-          "type": "string",
-          "description": "The display name of the service principal."
-        },
         "appId": {
           "type": "string",
           "description": "The application ID."
@@ -2303,7 +2254,8 @@
           "description": "A collection of service principal names."
         }
       },
-      "description": "Active Directory service principal information."
+      "description": "Active Directory service principal information.",
+      "x-ms-discriminator-value": "ServicePrincipal"
     },
     "ServicePrincipalListResult": {
       "properties": {
@@ -2403,22 +2355,15 @@
       "description": "Request parameters for updating an existing work or school account user."
     },
     "User": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/AADObject"
+        }
+      ],
       "properties": {
-        "objectId": {
-          "type": "string",
-          "description": "The object ID."
-        },
-        "objectType": {
-          "type": "string",
-          "description": "The object type."
-        },
         "userPrincipalName": {
           "type": "string",
           "description": "The principal name of the user."
-        },
-        "displayName": {
-          "type": "string",
-          "description": "The display name of the user."
         },
         "signInName": {
           "type": "string",
@@ -2437,7 +2382,8 @@
           "description": "A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries. Examples include: \"US\", \"JP\", and \"GB\"."
         }
       },
-      "description": "Active Directory user information."
+      "description": "Active Directory user information.",
+      "x-ms-discriminator-value": "User"
     },
     "UserGetMemberGroupsParameters": {
       "properties": {
