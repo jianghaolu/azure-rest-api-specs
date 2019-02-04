@@ -94,4 +94,12 @@ java:
   with-optional-parameters: true
   prefix-model-type: Bing
   with-single-async-method: true
+directive:
+  from: swagger-document
+  where: $.paths["/spellcheck"].post.parameters[*]
+  transform: >
+    if( $['required'] == false ) {
+      $['x-ms-parameter-grouping'] = {};
+      $['x-ms-parameter-grouping']['name'] = 'SpellCheckOptionalParameters';
+    }
 ```
