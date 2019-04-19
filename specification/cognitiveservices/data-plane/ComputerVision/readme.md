@@ -104,7 +104,6 @@ Please also specify `--azure-libraries-for-java-folder=<path to the root directo
 
 ``` yaml $(java)
 java:
-  azure-arm: true
   namespace: com.microsoft.azure.cognitiveservices.vision.computervision
   license-header: MICROSOFT_MIT_NO_CODEGEN
   payload-flattening-threshold: 1
@@ -112,7 +111,6 @@ java:
   with-optional-parameters: true
   with-single-async-method: true
   with-default-group-name: ComputerVision
-
 directive:
   from: source-file-java
   where: $

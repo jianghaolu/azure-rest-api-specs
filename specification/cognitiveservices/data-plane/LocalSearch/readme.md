@@ -60,3 +60,27 @@ directive:
   - suppress: R3016
     reason: _type is a polymorphic discriminator that can't be changed.
 ```
+
+## Java
+
+These settings apply only when `--java` is specified on the command line.
+Please also specify `--azure-libraries-for-java-folder=<path to the root directory of your azure-libraries-for-java clone>`.
+
+``` yaml $(java)
+java:
+  namespace: com.microsoft.azure.cognitiveservices.search.localsearch
+  license-header: MICROSOFT_MIT_NO_CODEGEN
+  payload-flattening-threshold: 1
+  output-folder: $(azure-libraries-for-java-folder)/cognitiveservices/data-plane/search/binglocalsearch
+  with-optional-parameters: true
+  prefix-model-type: Bing
+  with-single-async-method: true
+directive:
+  from: swagger-document
+  where: $.paths["/localbusinesses/v7.0/search"].post.parameters[*]
+  transform: >
+    if( $['required'] == false ) {
+      $['x-ms-parameter-grouping'] = {};
+      $['x-ms-parameter-grouping']['name'] = 'LocalSearchOptionalParameters';
+    }
+```

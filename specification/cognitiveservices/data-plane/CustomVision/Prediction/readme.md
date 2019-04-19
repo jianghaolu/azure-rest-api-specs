@@ -106,7 +106,6 @@ Please also specify `--azure-libraries-for-java-folder=<path to the root directo
 
 ``` yaml $(java)
 java:
-  azure-arm: true
   namespace: com.microsoft.azure.cognitiveservices.vision.customvision.prediction
   license-header: MICROSOFT_MIT_NO_CODEGEN
   payload-flattening-threshold: 1

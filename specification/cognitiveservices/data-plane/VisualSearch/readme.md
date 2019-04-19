@@ -89,7 +89,6 @@ Please also specify `--azure-libraries-for-java-folder=<path to the root directo
 
 ``` yaml $(java)
 java:
-  azure-arm: true
   namespace: com.microsoft.azure.cognitiveservices.search.visualsearch
   license-header: MICROSOFT_MIT_NO_CODEGEN
   payload-flattening-threshold: 1
@@ -97,4 +96,12 @@ java:
   with-optional-parameters: true
   prefix-model-type: Bing
   with-single-async-method: true
+directive:
+  from: swagger-document
+  where: $.paths["/images/visualsearch"].post.parameters[*]
+  transform: >
+    if( $['required'] == false ) {
+      $['x-ms-parameter-grouping'] = {};
+      $['x-ms-parameter-grouping']['name'] = 'VisualSearchOptionalParameters';
+    }
 ```
